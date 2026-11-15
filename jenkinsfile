@@ -8,6 +8,14 @@ pipeline {
             }
         }
         
+        stage('clearup') {
+            steps {
+                sh'''
+                docker compose down
+                '''
+            }
+        }
+
         stage('Build') {
             steps {
                 sh'''
